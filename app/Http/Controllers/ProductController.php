@@ -6,10 +6,8 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function create()
     {
-        $x=10;
-        $y=20;
-        return $x+$y;
+return view('products');
     }
 }

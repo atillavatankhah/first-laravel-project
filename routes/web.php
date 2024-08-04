@@ -6,5 +6,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('/product',[\App\Http\Controllers\ProductController::class,'index']);
+//create new product route
+Route::get('/product',[\App\Http\Controllers\ProductController::class,'create']);
