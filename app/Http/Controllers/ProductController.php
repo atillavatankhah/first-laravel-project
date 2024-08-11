@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -12,7 +12,7 @@ class ProductController extends Controller
 return view('products');
     }
 
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
 
         $product=new Product();

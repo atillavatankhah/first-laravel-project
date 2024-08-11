@@ -8,28 +8,36 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>products</h1>
-    <form action="/create" method="post">
-        @csrf
-        <div>
-           <div class="">
-               <input type="text">
-           </div>
+<h1>products</h1>
+<form action="/create" method="post">
+    @csrf
 
-            <div class="">
-                <input name="title" type="text">
-            </div> <div class="">
-                <input name="price" type="text">
-            </div> <div class="">
-                <input name="discount" type="text">
-            </div> <div class="">
-                <input name="description" type="text">
-            </div>
-            <div class="">
-                <input name="photo" type="file">
-            </div> <div class="">
+        <div class="">
+            <input name="title" type="text">
+            <br>
+            <small>@error('title') {{$message}} @enderror</small>
+        </div>
+        <div class="">
+            <input name="price" type="text">
+            <br>
+            <small>@error('price') {{$message}} @enderror</small>
+        </div>
+        <div class="">
+            <input name="discount" type="text">
+            <br>
+            <small>@error('discount') {{$message}} @enderror</small>
+        </div>
+        <div class="">
+            <input name="description" type="text">
+            <br>
+            <small>@error('description') {{$message}} @enderror</small>
+        </div>
+        <div class="">
+            <input name="photo" type="file">
+            <br>
+            <small>@error('photo') {{$message}} @enderror</small>
         </div>
         <button type="submit">save</button>
-    </form>
+</form>
 </body>
-</html
+</html>
