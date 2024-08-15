@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>products</h1>
-<form action="/create" method="post">
+<form action="/products" method="post">
     @csrf
 
         <div class="">
