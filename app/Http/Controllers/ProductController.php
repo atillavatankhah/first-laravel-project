@@ -71,6 +71,9 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $product =Product::findorFail($id);
+        $product->delete();
+
+        return redirect( 'products');
     }
 }

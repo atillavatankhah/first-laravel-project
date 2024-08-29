@@ -1,43 +1,37 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<h1>products</h1>
-<form action="/products" method="post">
-    @csrf
+@extends('app.master')
+@section('content')
+    <h1 class="text-center">products</h1>
+    <div class="container text-center">
+        <form action="/products" method="post">
+            @csrf
 
-        <div class="">
-            <input name="title" type="text">
-            <br>
-            <small>@error('title') {{$message}} @enderror</small>
-        </div>
-        <div class="">
-            <input name="price" type="text">
-            <br>
-            <small>@error('price') {{$message}} @enderror</small>
-        </div>
-        <div class="">
-            <input name="discount" type="text">
-            <br>
-            <small>@error('discount') {{$message}} @enderror</small>
-        </div>
-        <div class="">
-            <input name="description" type="text">
-            <br>
-            <small>@error('description') {{$message}} @enderror</small>
-        </div>
-        <div class="">
-            <input name="photo" type="file">
-            <br>
-            <small>@error('photo') {{$message}} @enderror</small>
-        </div>
-        <button type="submit">save</button>
-</form>
-</body>
-</html>
+            <div class="">
+                <input name="title" type="text" placeholder="Title">
+                <br>
+                <small class="text-danger"> @error('title') {{$message}} @enderror</small>
+            </div>
+            <div class="">
+                <input name="price" type="text" placeholder="price">
+                <br>
+                <small class="text-danger"> @error('price') {{$message}} @enderror</small>
+            </div>
+            <div class="">
+                <input name="discount" type="text" placeholder="discount">
+                <br>
+                <small class="text-danger">@error('discount') {{$message}} @enderror</small>
+            </div>
+            <div class="">
+                <input name="description" type="text" placeholder="description">
+                <br>
+                <small class="text-danger">@error('description') {{$message}} @enderror</small>
+            </div>
+            <div class="">
+                <input name="photo" type="file">
+                <br>
+                <small class="text-danger">@error('photo') {{$message}} @enderror</small>
+            </div>
+            <button type="submit">save</button>
+        </form>
+
+    </div>
+@endsection
