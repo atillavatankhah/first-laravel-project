@@ -27,6 +27,7 @@
                         <td>
                             <form action="{{route('products.destroy',$product)}}" method="post">
                                 @csrf
+                                    <a class="btn btn-info" type="button" href="{{route('products.edit',$product)}}">Edit</a>
                                 <input type="hidden" name="_method" value="DELETE">
                                 <button type="submit" class="btn btn-danger">delete</button>
                             </form>

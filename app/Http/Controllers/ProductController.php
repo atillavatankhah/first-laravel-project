@@ -55,20 +55,31 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
+        $product=Product::findOrFail($id);
+        return view('products.edit',compact('product'));
     }
 
     /**
      * Update the specified resource in storage.
      */
+
     public function update(Request $request, string $id)
     {
-        //
+        $product=Product::findOrFail($id);
+        $product->title = $request->title;
+        $product->price = $request->price;
+        $product->discount = $request->discount;
+        $product->description = $request->description;
+        $product->photo = $request->photo;
+        $product->save();
+        return redirect(  'products');
     }
 
     /**
      * Remove the specified resource from storage.
      */
+
     public function destroy(string $id)
     {
         $product =Product::findorFail($id);
